@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import './assets/app.css';
 import './assets/app.scss';
 import logo from './assets/sc_logo.svg';
-import SiteFooter from './components/common/footer/SiteFooter';
+import SiteFooter from './components/global/footer/SiteFooter';
 
 /*
   APP LAYOUT
@@ -75,7 +75,8 @@ const Layout = ({ route }) => (
     <Navigation />
 
     {/* root placeholder for the app, which we add components to using route data */}
-    <div className="container">
+    {/* <div className="container"> */}
+    <div>
       <Placeholder name="jss-main" rendering={route} />
       <SiteFooter />
     </div>
