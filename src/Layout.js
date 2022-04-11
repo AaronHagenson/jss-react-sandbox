@@ -8,7 +8,8 @@ import Helmet from 'react-helmet';
 // Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
-import './assets/app.css';
+// import './assets/app.css';
+import './assets/app.scss';
 import logo from './assets/sc_logo.svg';
 
 /*
@@ -23,12 +24,12 @@ import logo from './assets/sc_logo.svg';
 // Most apps may also wish to use GraphQL for their navigation construction; this sample does not simply to support disconnected mode.
 let Navigation = ({ t, i18n }) => (
   <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
-    <h5 className="my-0 mr-md-auto font-weight-normal">
+    <h5 className="my-0 mr-md-auto font-weight-normal test-class">
       <NavLink to="/" className="text-dark">
         <img src={logo} alt="Sitecore" />
       </NavLink>
     </h5>
-    <nav className="my-2 my-md-0 mr-md-3">
+    <nav className="my-2 my-md-0 mr-md-3 test-content-block">
       <a
         className="p-2 text-dark"
         href="https://jss.sitecore.com"

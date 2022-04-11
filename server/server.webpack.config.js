@@ -32,6 +32,17 @@ module.exports = {
         },
       },
       {
+        test: /\.(scss|sass)?$/,
+        exclude: /node_modules/,
+        use: {
+          loaders: [
+            require.resolve('style-loader'),
+            require.resolve('css-loader'),
+            require.resolve('sass-loader'),
+          ],
+        },
+      },
+      {
         test: /\.html$/,
         exclude: /node_modules/,
         use: { loader: 'html-loader' },
@@ -53,6 +64,15 @@ module.exports = {
         include: /node_modules/,
         use: {
           loader: 'null-loader',
+        },
+      },
+      {
+        exclude: [/\.(?!js|ts|mjs|jsx|tsx|html|graphql$)[^.]+$/, /\.html$/, /\.json$/, /\.scss$/],
+        use: {
+          loaders: [require.resolve('file-loader')],
+        },
+        options: {
+          name: 'static/media/[name].[hash:8].ext',
         },
       },
     ],
