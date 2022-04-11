@@ -29,7 +29,7 @@ let Navigation = ({ t, i18n }) => (
         <img src={logo} alt="Sitecore" />
       </NavLink>
     </h5>
-    <nav className="my-2 my-md-0 mr-md-3 test-content-block">
+    <nav className="my-2 my-md-0 mr-md-3">
       <a
         className="p-2 text-dark"
         href="https://jss.sitecore.com"
