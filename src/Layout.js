@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import './assets/app.css';
 import './assets/app.scss';
 import logo from './assets/sc_logo.svg';
-import SiteFooter from './components/global/footer/SiteFooter';
+import SiteFooterTest from './components/test/footer/SiteFooterTest';
 
 /*
   APP LAYOUT
@@ -78,7 +78,8 @@ const Layout = ({ route }) => (
     {/* <div className="container"> */}
     <div>
       <Placeholder name="jss-main" rendering={route} />
-      <SiteFooter />
+      {/* <SiteFooterTest /> */}
+      <Placeholder name="site-footer" rendering={route} />
     </div>
   </React.Fragment>
 );

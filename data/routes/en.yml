@@ -59,3 +59,18 @@ placeholders:
               <li>Delete <code>/data/dictionary/*.yml</code></li>
             </ol>
           </div>
+  site-footer: 
+    - componentName: SiteFooter
+      fields: 
+        heading: This is the footer
+        signUpHeader: Get The Latest Information
+        socialIconHeader: Connect With Us
+        supportText: Customer Support
+        supportPhone: 555-555-5555
+        copyrightText: Copyright stuff
+      placeholders: 
+        footer-navigation-column:
+          - componentName: FooterNavigationColumn
+            fields: 
+              heading: Navigation column
+
