@@ -14,6 +14,9 @@ const FooterNavigationColumn = (props) => {
   const [isMobile, setIsMobile] = useState(false);
   const { footerNavLinksList } = props.fields;
 
+  // TEST
+  const shouldRenderLink = !!footerNavLinksList[0]?.fields?.internalLink?.value?.text;
+
   //   return (
   //     <div className="navigation-container-desktop">
   //       <div className="links-column">
@@ -50,33 +53,28 @@ const FooterNavigationColumn = (props) => {
           )} */}
         <span className="links-heading subtitle_1">{getFieldValue(props.fields, 'heading')}</span>
 
-        {/* {props.fields.footerNavLinksList.map((navLink, index) => (
-          <p className="body2" key={index}>
-            {
-              <a href={getFieldValue(navLink.fields, 'url') ?? '#'} className={'subnav-links'}>
-                {getFieldValue(navLink.fields, 'label')}
-              </a>
-            }
-          </p>
-        ))} */}
-        {footerNavLinksList.map((navLink, index) => (
-          <p className="body2" key={index}>
-            {
-              // <a href={getFieldValue(navLink.fields, 'url') ?? '#'} className={'subnav-links'}>
-              //   {getFieldValue(navLink.fields, 'label')}
-              // </a>
-              <a href={navLink.fields.url.value ?? '#'} className={'subnav-links'}>
-                {navLink.fields.label.value}
-              </a>
-              // <Link field={navLink.fields.label} />
-            }
-          </p>
-        ))}
+        {footerNavLinksList.map((navLink, index) => {
+          const hasHref = !!navLink?.fields?.internalLink?.value?.href;
+
+          return (
+            <p className="body2" key={index}>
+              {hasHref ? (
+                <Link field={navLink.fields.internalLink} className={'subnav-links'} />
+              ) : (
+                // This doesn't actually render anything. If there is no href added to the link
+                // field, the "fields" object is empty. It seems that in order to use a GeneralLink
+                // type it is required to add the href. Maybe this won't be the case in connected mode.
+                // It's possible that it's a quirk of the .yml files.
+                <a href="#" className={'subnav-links'}>
+                  {navLink?.fields?.internalLink?.value?.text}
+                </a>
+              )}
+            </p>
+          );
+        })}
       </div>
     </div>
   );
-
-  // return <div>Hello world</div>;
 };
 
 export default FooterNavigationColumn;

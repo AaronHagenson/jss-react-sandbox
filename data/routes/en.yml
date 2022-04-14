@@ -76,5 +76,26 @@ placeholders:
               footerNavLinksList: 
               - id: footer-column-1-link-1
               - id: footer-column-1-link-2
+        footer-navigation-column-2:
+          - componentName: FooterNavigationColumn
+            fields: 
+              heading: Column 2
+              footerNavLinksList: 
+              - id: footer-column-1-link-1
+              - id: footer-column-1-link-2
+        footer-navigation-column-3:
+          - componentName: FooterNavigationColumn
+            fields: 
+              heading: Column 3
+              footerNavLinksList: 
+              - id: footer-column-1-link-1
+              - id: footer-column-1-link-2
+        footer-navigation-column-4:
+          - componentName: FooterNavigationColumn
+            fields: 
+              heading: Column 4
+              footerNavLinksList: 
+              - id: footer-column-1-link-1
+              - id: footer-column-1-link-2
 
 

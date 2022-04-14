@@ -3,5 +3,6 @@ displayName: Link 2
 # Template defines the available fields. See /sitecore/definitions/templates/Styleguide-ContentList-Template.sitecore.js
 template: Footer-NavLinks-Template
 fields:
-  label: Link 2
-  url: "www.google.com"
+  internalLink:
+    href: '/graphql'
+    text: Link to graphql

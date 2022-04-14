@@ -8,10 +8,10 @@ import { CommonFieldTypes, Manifest } from '@sitecore-jss/sitecore-jss-manifest'
 export default function (manifest) {
   manifest.addTemplate({
     name: 'Footer-NavLinks-Template',
-    fields: [
-      { name: 'label', type: CommonFieldTypes.SingleLineText },
-      { name: 'url', type: CommonFieldTypes.SingleLineText },
-    ],
-    // fields: [{ name: 'internalLink', type: CommonFieldTypes.GeneralLink }],
+    // fields: [
+    //   { name: 'label', type: CommonFieldTypes.SingleLineText },
+    //   { name: 'url', type: CommonFieldTypes.SingleLineText },
+    // ],
+    fields: [{ name: 'internalLink', type: CommonFieldTypes.GeneralLink }],
   });
 }
