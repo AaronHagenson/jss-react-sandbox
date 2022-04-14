@@ -69,8 +69,10 @@ placeholders:
         supportPhone: 555-555-5555
         copyrightText: Copyright stuff
       placeholders: 
-        footer-navigation-column:
+        footer-navigation-column-1:
           - componentName: FooterNavigationColumn
             fields: 
-              heading: Navigation column
+              heading: Column 1
+              footerNavLinksList: 
+              - id: footer-column-1-link-1
 

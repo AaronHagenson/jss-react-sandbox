@@ -1,0 +1,7 @@
+id: footer-column-1-link-1
+displayName: Link 1
+# Template defines the available fields. See /sitecore/definitions/templates/Styleguide-ContentList-Template.sitecore.js
+template: Footer-NavLinks-Template
+fields:
+  label: Link 1
+  url: "www.google.com"

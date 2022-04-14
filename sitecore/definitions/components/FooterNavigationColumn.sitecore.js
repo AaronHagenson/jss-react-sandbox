@@ -10,7 +10,14 @@ export default function (manifest) {
   manifest.addComponent({
     name: 'FooterNavigationColumn',
     icon: SitecoreIcon.DocumentTag,
-    fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText }],
+    fields: [
+      { name: 'heading', type: CommonFieldTypes.SingleLineText },
+      {
+        name: 'footerNavLinksList',
+        type: CommonFieldTypes.ContentList,
+        source: `dataSource=/sitecore/content/${packageJson.config.appName}/Content/Footer/NavLinksColumn1`,
+      },
+    ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
     register it here, or components added to that placeholder will not be returned by Sitecore:

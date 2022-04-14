@@ -21,10 +21,10 @@ const SiteFooter = (props) => (
       <FooterNavigationColumn columnItem={navigationItems[1]} />
       <FooterNavigationColumn columnItem={navigationItems[2]} />
       <FooterNavigationColumn columnItem={navigationItems[3]} /> */}
-      <Placeholder name={'footer-navigation-column'} rendering={props.rendering} />
-      <Placeholder name={'footer-navigation-column'} rendering={props.rendering} />
-      <Placeholder name={'footer-navigation-column'} rendering={props.rendering} />
-      <Placeholder name={'footer-navigation-column'} rendering={props.rendering} />
+      <Placeholder name={'footer-navigation-column-1'} rendering={props.rendering} />
+      <Placeholder name={'footer-navigation-column-2'} rendering={props.rendering} />
+      <Placeholder name={'footer-navigation-column-3'} rendering={props.rendering} />
+      <Placeholder name={'footer-navigation-column-4'} rendering={props.rendering} />
     </div>
 
     <div className="contact-container">
