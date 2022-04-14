@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore-jss-manifest';
+import packageJson from '../../../package.json';
 
 /**
  * Adds the FooterNavigationColumn component to the disconnected manifest.

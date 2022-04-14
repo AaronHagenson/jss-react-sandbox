@@ -75,4 +75,6 @@ placeholders:
               heading: Column 1
               footerNavLinksList: 
               - id: footer-column-1-link-1
+              - id: footer-column-1-link-2
+
 

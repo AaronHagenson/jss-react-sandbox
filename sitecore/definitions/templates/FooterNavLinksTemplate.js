@@ -12,5 +12,6 @@ export default function (manifest) {
       { name: 'label', type: CommonFieldTypes.SingleLineText },
       { name: 'url', type: CommonFieldTypes.SingleLineText },
     ],
+    // fields: [{ name: 'internalLink', type: CommonFieldTypes.GeneralLink }],
   });
 }
