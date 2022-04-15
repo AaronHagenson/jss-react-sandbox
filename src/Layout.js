@@ -8,7 +8,9 @@ import Helmet from 'react-helmet';
 // Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
-import './assets/app.css';
+// import './assets/app.css';
+import appStyles from './assets/app.module.css';
+
 import logo from './assets/sc_logo.svg';
 
 /*
@@ -44,6 +46,8 @@ let Navigation = ({ t, i18n }) => (
         {t('GraphQL')}
       </NavLink>
     </nav>
+
+    <div className={appStyles.thingy}>Test thingy</div>
   </div>
 );
 
