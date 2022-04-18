@@ -12,46 +12,30 @@ import { Text, getFieldValue, Link } from '@sitecore-jss/sitecore-jss-react';
 
 const FooterNavigationColumn = (props) => {
   const [isMobile, setIsMobile] = useState(false);
-  const { footerNavLinksList } = props.fields;
+  // const { footerNavLinksList } = props.fields;
+  const { footerNavLinksList } = props.hello[0].fields;
+
+  // debugger;
 
   // TEST
-  const shouldRenderLink = !!footerNavLinksList[0]?.fields?.internalLink?.value?.text;
+  // const shouldRenderLink = !!footerNavLinksList[0]?.fields?.internalLink?.value?.text;
 
-  //   return (
-  //     <div className="navigation-container-desktop">
-  //       <div className="links-column">
-  //         {columnItem.link ? (
-  //           <a href={columnItem.link} className={'links-heading-hover subtitle_1'}>
-  //             {columnItem.columnHeading}
-  //           </a>
-  //         ) : (
-  //           <span className="links-heading subtitle_1">{columnItem.columnHeading}</span>
-  //         )}
-  //         {columnItem.children.map((childLink, index) => (
-  //           <p className="body2" key={index}>
-  //             {
-  //               <a href={childLink.link ?? '#'} className={'subnav-links'}>
-  //                 {childLink.title}
-  //               </a>
-  //             }
-  //           </p>
-  //         ))}
-  //       </div>
-  //     </div>
-  //   );
-  // };
+  // return (
+  //   <div>
+  //     <button>Click me!</button>
+  //   </div>
+  // );
+
+  const handleClick = () => props.handleClick();
 
   return (
     <div className="navigation-container-desktop">
       <div className="links-column">
-        {/* {columnItem.link ? (
-            <a href={columnItem.link} className={'links-heading-hover subtitle_1'}>
-              {columnItem.columnHeading}
-            </a>
-          ) : (
-            <span className="links-heading subtitle_1">{columnItem.columnHeading}</span>
-          )} */}
-        <span className="links-heading subtitle_1">{getFieldValue(props.fields, 'heading')}</span>
+        {/* <span className="links-heading subtitle_1">{getFieldValue(props.fields, 'heading')}</span> */}
+
+        <div>
+          <button onClick={handleClick}>Click me!</button>
+        </div>
 
         {footerNavLinksList.map((navLink, index) => {
           const hasHref = !!navLink?.fields?.internalLink?.value?.href;
