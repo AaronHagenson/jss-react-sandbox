@@ -102,24 +102,42 @@ function generateComponentFactory() {
             //   fs.existsSync(path.join(itemPath, 'index.js')) ||
             //   fs.existsSync(path.join(itemPath, 'index.jsx'))
             // ) {
-            const importVarName = itemPath.replace(/[^\w]+/g, '');
-            console.log(`importVarName: ${importVarName}`);
-
-            console.debug(`Registering JSS component ${itemPath}`);
-            imports.push(`import ${importVarName} from '../components/${itemPath}';`);
-            registrations.push(`components.set('${itemPath}', ${importVarName});`);
+            // const importVarName = itemPath.replace(/[^\w]+/g, '');
+            // ///////////////////////////////////////////////////////////
+            // const pathArray = itemPath.split('\\');
+            // const importVarName = pathArray[pathArray.length - 2];
+            // console.log(`importVarName: ${importVarName}`);
+            // console.debug(`Registering JSS component ${itemPath}`);
+            // imports.push(`import ${importVarName} from '../components/${itemPath}';`);
+            // registrations.push(`components.set('${itemPath}', ${importVarName});`);
+            // ///////////////////////////////////////////////////
             // }
+            registerComponent(itemPath);
           }
         });
       } else {
-        const importVarName = subFolderItemPath.replace(/[^\w]+/g, '');
-        console.log(`importVarName: ${importVarName}`);
-
-        console.debug(`Registering JSS component ${subFolderItemPath}`);
-        imports.push(`import ${importVarName} from '../components/${subFolderItemPath}';`);
-        registrations.push(`components.set('${subFolderItemPath}', ${importVarName});`);
+        // const importVarName = subFolderItemPath.replace(/[^\w]+/g, '');
+        // console.log(`importVarName: ${importVarName}`);
+        // console.debug(`Registering JSS component ${subFolderItemPath}`);
+        // imports.push(`import ${importVarName} from '../components/${subFolderItemPath}';`);
+        // registrations.push(`components.set('${subFolderItemPath}', ${importVarName});`);
+        registerComponent(subFolderItemPath);
       }
     });
+
+    function registerComponent(itemPath) {
+      const pathArray = itemPath.split('\\');
+      const importVarName = pathArray[pathArray.length - 2];
+
+      console.log(`importVarName: ${importVarName}`);
+
+      itemPath = itemPath.replace(/\\/g, '/');
+
+      console.debug(`Registering JSS component ${itemPath}`);
+      imports.push(`import ${importVarName} from '../components/${itemPath}';`);
+      // registrations.push(`components.set('${itemPath}', ${importVarName});`);
+      registrations.push(`components.set('${importVarName}', ${importVarName});`);
+    }
 
     // console.log(
     //   'path.join(subFolderItemPath, "index.js"): ' +
