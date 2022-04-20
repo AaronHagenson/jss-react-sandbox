@@ -1,0 +1,21 @@
+fields:
+  pageTitle: Styleguide | Sitecore JSS
+placeholders:
+  jss-main:
+  - componentName: ContentBlock
+    fields:
+      heading: Test Page
+      content: |
+        <p>This is a ContentBlock component</p>
+  - componentName: MyTestComponent
+    fields: 
+      heading: This is MyTestComponent
+  - componentName: ScaffoldedComponent
+    fields: 
+      heading: And here's the ScaffoldedComponent
+  - componentName: SecondComponent
+    fields: 
+      heading: SecondComponent, yo!
+  - componentName: SubScaf
+    fields: 
+      heading: Hey! SubScaf

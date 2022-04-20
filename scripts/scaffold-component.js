@@ -14,8 +14,8 @@ const chalk = require('chalk');
   SCAFFOLDING SCRIPT
 */
 // const componentName = process.argv[2];
-const componentPath = process.argv[2];
-const componentName = componentPath.split('/').pop();
+let componentPath = process.argv[2];
+let componentName = componentPath.split('/').pop();
 
 console.log('componentPath: ' + componentPath);
 console.log('componentName: ' + componentName);
@@ -35,7 +35,13 @@ if (!componentName) {
 }
 
 if (!/^[A-Z][A-Za-z0-9-]+$/.test(componentName)) {
-  throw 'Component name should start with an uppercase letter and contain only letters and numbers. Ex: jss scaffold account/AccountMenu';
+  throw `Component name should start with an uppercase letter and contain only letters and numbers. 
+  Do not include the file extension (i.e. ".js" or ".jsx). Ex: jss scaffold mysubfolder/MyComponentName`;
+}
+
+if (componentPath.includes('C:/')) {
+  throw `Path should not begin with a special character (such as "/" or "\"). To scaffold a new component the 
+  command should look like this: jss scaffold mysubfolder/MyComponentName`;
 }
 
 const componentManifestDefinitionsPath = 'sitecore/definitions/components';
