@@ -13,21 +13,13 @@ const chalk = require('chalk');
 /*
   SCAFFOLDING SCRIPT
 */
-// const componentName = process.argv[2];
 let componentPath = process.argv[2];
 let componentName = componentPath.split('/').pop();
 
-console.log('componentPath: ' + componentPath);
-console.log('componentName: ' + componentName);
-
-// TEST
-const args = process.argv;
-console.log({ args });
-
 if (!componentPath.includes('/')) {
   throw `Please pass a path for the new component. The path should be relative to the src/components folder.
-For example: jss scaffold account/AccountMenu.  This will create a new AccountMenu component in the folder 
-src/components/account`;
+For example: jss scaffold mysubfolder/MyComponentName.  This will create a new MyComponentName component in the folder 
+src/components/mysubfolder`;
 }
 
 if (!componentName) {
@@ -116,15 +108,10 @@ const ${exportVarName} = (props) => (
 export default ${exportVarName};
 `;
 
-  // const outputDirectoryPath = path.join(componentRootPath, componentName);
   const outputDirectoryPath = path.join(componentRootPath, componentPath);
-  console.log('outputDirectoryPath: ' + outputDirectoryPath);
-
   const subFolderPath = outputDirectoryPath.split('\\').slice(0, -1).join('\\');
-  console.log('subFolderPath: ' + subFolderPath);
 
   if (!fs.existsSync(subFolderPath)) {
-    console.log('creating component directory. . .');
     fs.mkdirSync(subFolderPath);
   }
 
@@ -169,16 +156,11 @@ export default function (manifest) {
     `${componentPath}.sitecore.js`
   );
 
-  // test
   const componentPathArray = componentPath.split('/');
-  console.log('componentPathArray: ' + componentPathArray);
   const componentDirectory = componentPathArray.slice(0, -1).join('/');
-  console.log('componentDirectory: ' + componentDirectory);
   const manifestDirectoryPath = path.join(componentManifestDefinitionsPath, componentDirectory);
-  console.log('manifestDirectoryPath: ' + manifestDirectoryPath);
 
   if (!fs.existsSync(manifestDirectoryPath)) {
-    console.log('creating directory. . .');
     fs.mkdirSync(manifestDirectoryPath);
   }
 
