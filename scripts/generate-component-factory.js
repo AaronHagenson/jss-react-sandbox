@@ -61,66 +61,29 @@ function generateComponentFactory() {
   const imports = [];
   const registrations = [];
 
-  // fs.readdirSync(componentRootPath).forEach((componentFolder) => {
-  //   const componentFolderFullPath = path.join(componentRootPath, componentFolder);
-
-  //   if (
-  //     fs.existsSync(path.join(componentFolderFullPath, 'index.js')) ||
-  //     fs.existsSync(path.join(componentFolderFullPath, 'index.jsx'))
-  //   ) {
-  //     const importVarName = componentFolder.replace(/[^\w]+/g, '');
-
-  //     console.debug(`Registering JSS component ${componentFolder}`);
-  //     imports.push(`import ${importVarName} from '../components/${componentFolder}';`);
-  //     registrations.push(`components.set('${componentFolder}', ${importVarName});`);
-  //   }
-  // });
-
+  // Customized logic to allow us to place components in subfolders
+  // inside the src/components directory
   fs.readdirSync(componentRootPath).forEach((subFolder) => {
     const subFolderFullPath = path.join(componentRootPath, subFolder);
-    console.log(`subFolderFullPath: ${subFolderFullPath}`);
     searchSubFolder(subFolderFullPath);
   });
 
+  // recursive search through all folders to find index.js file
   function searchSubFolder(subFolder) {
-    console.log('searchSubFolder - ' + subFolder);
     fs.readdirSync(subFolder).forEach((subFolderItem) => {
       const subFolderItemPath = path.join(subFolder, subFolderItem);
-      console.log(`subFolderItemPath: ${subFolderItemPath}`);
 
       if (fs.statSync(subFolderItemPath).isDirectory()) {
         fs.readdirSync(subFolderItemPath).forEach((item) => {
-          console.log('item: ' + item);
           const itemPath = path.join(subFolderItemPath, item);
-          console.log('itemPath: ' + itemPath);
-          const isDirectory = fs.statSync(itemPath).isDirectory();
-          console.log(isDirectory);
+
           if (fs.statSync(itemPath).isDirectory()) {
             return searchSubFolder(subFolderItemPath);
           } else {
-            // if (
-            //   fs.existsSync(path.join(itemPath, 'index.js')) ||
-            //   fs.existsSync(path.join(itemPath, 'index.jsx'))
-            // ) {
-            // const importVarName = itemPath.replace(/[^\w]+/g, '');
-            // ///////////////////////////////////////////////////////////
-            // const pathArray = itemPath.split('\\');
-            // const importVarName = pathArray[pathArray.length - 2];
-            // console.log(`importVarName: ${importVarName}`);
-            // console.debug(`Registering JSS component ${itemPath}`);
-            // imports.push(`import ${importVarName} from '../components/${itemPath}';`);
-            // registrations.push(`components.set('${itemPath}', ${importVarName});`);
-            // ///////////////////////////////////////////////////
-            // }
             registerComponent(itemPath);
           }
         });
       } else {
-        // const importVarName = subFolderItemPath.replace(/[^\w]+/g, '');
-        // console.log(`importVarName: ${importVarName}`);
-        // console.debug(`Registering JSS component ${subFolderItemPath}`);
-        // imports.push(`import ${importVarName} from '../components/${subFolderItemPath}';`);
-        // registrations.push(`components.set('${subFolderItemPath}', ${importVarName});`);
         registerComponent(subFolderItemPath);
       }
     });
@@ -129,22 +92,16 @@ function generateComponentFactory() {
       const pathArray = itemPath.split('\\');
       const importVarName = pathArray[pathArray.length - 2];
 
-      console.log(`importVarName: ${importVarName}`);
+      // remove "src" from the path and replace backslash with forward slash
+      const relativePath = itemPath
+        .split('\\')
+        .filter((str) => str !== 'src')
+        .join('/');
 
-      itemPath = itemPath.replace(/\\/g, '/');
-
-      console.debug(`Registering JSS component ${itemPath}`);
-      imports.push(`import ${importVarName} from '../components/${itemPath}';`);
-      // registrations.push(`components.set('${itemPath}', ${importVarName});`);
+      console.debug(`Registering JSS component ${relativePath}`);
+      imports.push(`import ${importVarName} from '../${relativePath}';`);
       registrations.push(`components.set('${importVarName}', ${importVarName});`);
     }
-
-    // console.log(
-    //   'path.join(subFolderItemPath, "index.js"): ' +
-    //     path.join(subFolderItemPath, 'index.js') +
-    //     '; isDirectory: ' +
-    //     fs.statSync(subFolderItemPath).isDirectory()
-    // );
   }
 
   return `/* eslint-disable */
