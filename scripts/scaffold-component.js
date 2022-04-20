@@ -13,18 +13,29 @@ const chalk = require('chalk');
 /*
   SCAFFOLDING SCRIPT
 */
-const componentName = process.argv[2];
+// const componentName = process.argv[2];
+const componentPath = process.argv[2];
+const componentName = componentPath.split('/').pop();
+
+console.log('componentPath: ' + componentPath);
+console.log('componentName: ' + componentName);
 
 // TEST
 const args = process.argv;
 console.log({ args });
 
+if (!componentPath.includes('/')) {
+  throw `Please pass a path for the new component. The path should be relative to the src/components folder.
+For example: jss scaffold account/AccountMenu.  This will create a new AccountMenu component in the folder 
+src/components/account`;
+}
+
 if (!componentName) {
-  throw 'Component name was not passed. Usage: jss scaffold <ComponentName>';
+  throw 'Component name was not passed.';
 }
 
 if (!/^[A-Z][A-Za-z0-9-]+$/.test(componentName)) {
-  throw 'Component name should start with an uppercase letter and contain only letters and numbers.';
+  throw 'Component name should start with an uppercase letter and contain only letters and numbers. Ex: jss scaffold account/AccountMenu';
 }
 
 const componentManifestDefinitionsPath = 'sitecore/definitions/components';
@@ -99,7 +110,17 @@ const ${exportVarName} = (props) => (
 export default ${exportVarName};
 `;
 
-  const outputDirectoryPath = path.join(componentRootPath, componentName);
+  // const outputDirectoryPath = path.join(componentRootPath, componentName);
+  const outputDirectoryPath = path.join(componentRootPath, componentPath);
+  console.log('outputDirectoryPath: ' + outputDirectoryPath);
+
+  const subFolderPath = outputDirectoryPath.split('\\').slice(0, -1).join('\\');
+  console.log('subFolderPath: ' + subFolderPath);
+
+  if (!fs.existsSync(subFolderPath)) {
+    console.log('creating component directory. . .');
+    fs.mkdirSync(subFolderPath);
+  }
 
   if (fs.existsSync(outputDirectoryPath)) {
     throw `Component path ${outputDirectoryPath} already existed. Not creating component.`;
@@ -139,13 +160,27 @@ export default function (manifest) {
 
   const outputFilePath = path.join(
     componentManifestDefinitionsPath,
-    `${componentName}.sitecore.js`
+    `${componentPath}.sitecore.js`
   );
+
+  // test
+  const componentPathArray = componentPath.split('/');
+  console.log('componentPathArray: ' + componentPathArray);
+  const componentDirectory = componentPathArray.slice(0, -1).join('/');
+  console.log('componentDirectory: ' + componentDirectory);
+  const manifestDirectoryPath = path.join(componentManifestDefinitionsPath, componentDirectory);
+  console.log('manifestDirectoryPath: ' + manifestDirectoryPath);
+
+  if (!fs.existsSync(manifestDirectoryPath)) {
+    console.log('creating directory. . .');
+    fs.mkdirSync(manifestDirectoryPath);
+  }
 
   if (fs.existsSync(outputFilePath)) {
     throw `Manifest definition path ${outputFilePath} already exists. Not creating manifest definition.`;
   }
 
+  console.log('writing file ' + outputFilePath);
   fs.writeFileSync(outputFilePath, editLineEndings(manifestTemplate), 'utf8');
 
   return outputFilePath;
