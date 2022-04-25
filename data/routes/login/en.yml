@@ -1,0 +1,7 @@
+fields:
+  pageTitle: Styleguide | Sitecore JSS
+placeholders:
+  jss-main:
+    - componentName: Login  
+      fields: 
+        heading: Login heading
