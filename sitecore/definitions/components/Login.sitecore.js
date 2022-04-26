@@ -10,7 +10,11 @@ export default function (manifest) {
   manifest.addComponent({
     name: 'Login',
     icon: SitecoreIcon.DocumentTag,
-    fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText }],
+    fields: [
+      { name: 'heading', type: CommonFieldTypes.SingleLineText },
+      { name: 'subTextHeading', type: CommonFieldTypes.SingleLineText },
+      { name: 'subText', type: CommonFieldTypes.SingleLineText },
+    ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
     register it here, or components added to that placeholder will not be returned by Sitecore:

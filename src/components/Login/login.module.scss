@@ -1,3 +1,17 @@
-.testThis {
-    color: red;
+
+.contentWrapper {
+    background-color: goldenrod;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.loginContainer {
+    width: 444px;
+    // height: 578px;
+    background-color: aliceblue;
+    margin: 0 auto;
 }

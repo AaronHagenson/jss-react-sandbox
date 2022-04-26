@@ -4,10 +4,11 @@ import { Text } from '@sitecore-jss/sitecore-jss-react';
 import styles from './login.module.scss';
 
 const Login = (props) => (
-  <div>
-    <p className={styles.testThis}>Login Component</p>
+  // <div className={styles.contentWrapper}>
+  <div className={styles.loginContainer}>
     <Text field={props.fields.heading} />
   </div>
+  // </div>
 );
 
 export default Login;

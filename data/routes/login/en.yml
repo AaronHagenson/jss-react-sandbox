@@ -1,7 +1,9 @@
 fields:
-  pageTitle: Styleguide | Sitecore JSS
+  pageTitle: My Account
 placeholders:
   jss-main:
     - componentName: Login  
       fields: 
-        heading: Login heading
+        heading: Sign in to Legrand | AV
+        subTextHeading: Don't have a LegrandAV.com account?
+        subText: We have several options available for you to gain access. Follow the link to learn more.

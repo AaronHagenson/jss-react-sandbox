@@ -73,12 +73,12 @@ const Layout = ({ route }) => (
 
       VI detection only runs once for a given analytics ID, so this is not a recurring operation once cookies are established.
     */}
-    <VisitorIdentification />
+    {/* <VisitorIdentification /> */}
 
-    <Navigation />
+    {/* <Navigation /> */}
 
     {/* root placeholder for the app, which we add components to using route data */}
-    <div className="container">
+    <div className="appContainer">
       <Placeholder name="jss-main" rendering={route} />
     </div>
   </React.Fragment>
