@@ -20,7 +20,14 @@ const Login = (props) => (
         </div>{' '}
         <input type={'text'} />
       </label>
+      <input type={'submit'} value={'SIGN IN'} />
     </form>
+    <hr />
+    <div className={styles.createAccountSection}>
+      <Text field={props.fields.subTextHeading} tag={'h3'} />
+      <Text field={props.fields.subText} tag={'p'} />
+      <Link field={props.fields.createAccountLink} />
+    </div>
   </div>
 );
 
