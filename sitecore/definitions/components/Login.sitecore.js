@@ -14,6 +14,8 @@ export default function (manifest) {
       { name: 'heading', type: CommonFieldTypes.SingleLineText },
       { name: 'subTextHeading', type: CommonFieldTypes.SingleLineText },
       { name: 'subText', type: CommonFieldTypes.SingleLineText },
+      { name: 'forgotPasswordLink', type: CommonFieldTypes.GeneralLink },
+      { name: 'createAccountLink', type: CommonFieldTypes.GeneralLink },
     ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

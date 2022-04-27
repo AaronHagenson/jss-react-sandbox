@@ -64,6 +64,7 @@ const Layout = ({ route }) => (
       <title>
         {(route.fields && route.fields.pageTitle && route.fields.pageTitle.value) || 'Page'}
       </title>
+      <link rel="stylesheet" href="https://use.typekit.net/awy7nwh.css" />
     </Helmet>
 
     {/*

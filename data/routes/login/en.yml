@@ -7,3 +7,9 @@ placeholders:
         heading: Sign in to Legrand | AV
         subTextHeading: Don't have a LegrandAV.com account?
         subText: We have several options available for you to gain access. Follow the link to learn more.
+        forgotPasswordLink: 
+          href: /styleguide
+          text: Forgot Password?
+        createAccountLink: 
+          href: /styleguide
+          text: Create an account
