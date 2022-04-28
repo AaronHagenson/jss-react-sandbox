@@ -1,0 +1,75 @@
+$accountHeader-tablet-breakpoint: 768px;
+$accountHeader-mobile-breakpoint: 480px;
+
+
+.accountHeader {
+    background-color: rgb(255, 255, 255);
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px 1px 3px 1px rgba(38, 41, 44, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 99999;
+
+    img {
+        margin: 26px 0 26px 59px;
+
+        @media screen and (max-width: $accountHeader-tablet-breakpoint) {
+            margin-left: 30px;
+        }
+
+        @media screen and (max-width: $accountHeader-mobile-breakpoint) {
+            margin-left: 20px;
+        }
+    }
+
+    a {
+        margin-right: 40px;
+        color: rgb(27, 45, 58);
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+
+        @media screen and (max-width: $accountHeader-tablet-breakpoint) {
+            margin-right: 30px;
+        }
+
+        @media screen and (max-width: $accountHeader-mobile-breakpoint) {
+            margin-right: 20px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: 2px solid rgb(46, 82, 118);
+            border-radius: 2px;
+        }
+
+        svg {
+            margin-right: 14px;
+            position: relative;
+            top: 4px;        
+        }
+
+        .mobileLinkText {
+            display: none;
+
+            @media screen and (max-width: $accountHeader-mobile-breakpoint) {
+                display: initial;
+            }
+        }
+
+        .fullLinkText {
+            @media screen and (max-width: $accountHeader-mobile-breakpoint) {
+                display: none;
+            }
+        }
+    }
+
+}
+

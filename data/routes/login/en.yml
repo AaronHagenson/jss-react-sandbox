@@ -13,3 +13,9 @@ placeholders:
         createAccountLink: 
           href: /styleguide
           text: Create an account
+  account-header:
+    - componentName: AccountHeader
+      fields:
+        logo: 
+          src: /data/media/img/legrandav-logo.svg
+          alt: LegrandAv Logo

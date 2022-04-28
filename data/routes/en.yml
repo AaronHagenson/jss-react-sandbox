@@ -59,3 +59,10 @@ placeholders:
               <li>Delete <code>/data/dictionary/*.yml</code></li>
             </ol>
           </div>
+  account-header:
+    - componentName: AccountHeader
+      fields:
+        logo: 
+          src: /data/media/img/legrandav-logo.svg
+          alt: LegrandAv Logo
+       
