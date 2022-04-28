@@ -5,8 +5,9 @@ import { withTranslation } from 'react-i18next';
 import deepEqual from 'deep-equal';
 import Helmet from 'react-helmet';
 
-// import appStyles from './assets/app.module.scss';
+// import CSS reset and global styles
 import reset from './assets/reset.module.scss';
+import appStyles from './assets/app.module.scss';
 
 import logo from './assets/sc_logo.svg';
 
@@ -44,7 +45,7 @@ let Navigation = ({ t, i18n }) => (
       </NavLink>
     </nav>
 
-    <div className={appStyles.thingy}>Test thingy</div>
+    {/* <div className={appStyles.thingy}>Test thingy</div> */}
   </div>
 );
 

@@ -42,7 +42,7 @@ const Login = (props) => {
         {shouldShowErrorMsg && (
           <div className={styles.errorMessage}>Your username and/or password is incorrect</div>
         )}
-        <input type={'submit'} value={'SIGN IN'} />
+        <input type={'submit'} value={'SIGN IN'} disabled={!(email.length && password.length)} />
       </form>
       <hr />
       <div className={styles.createAccountSection}>
