@@ -11,15 +11,22 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShouldShowErrorMsg(true);
-    alert('Email: ' + email + ' ; Password: ' + password);
   };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+
+    if (shouldShowErrorMsg) {
+      setShouldShowErrorMsg(false);
+    }
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+
+    if (shouldShowErrorMsg) {
+      setShouldShowErrorMsg(false);
+    }
   };
 
   return (
