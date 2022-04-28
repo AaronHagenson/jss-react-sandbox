@@ -6,6 +6,7 @@ import deepEqual from 'deep-equal';
 import Helmet from 'react-helmet';
 
 // import appStyles from './assets/app.module.scss';
+import reset from './assets/reset.module.scss';
 
 import logo from './assets/sc_logo.svg';
 
