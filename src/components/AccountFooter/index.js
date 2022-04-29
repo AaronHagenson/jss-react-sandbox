@@ -12,7 +12,7 @@ const LINKS = [
 ];
 
 const AccountFooter = (props) => (
-  <div className={styles.accountFooter}>
+  <footer className={styles.accountFooter}>
     <div className={styles.linksContainer}>
       {LINKS.map((link, index) => (
         <a key={index}>{link}</a>
@@ -23,7 +23,7 @@ const AccountFooter = (props) => (
       <span>&nbsp;|&nbsp;</span>
       <div>Do Not Sell My Personal Information</div>
     </div>
-  </div>
+  </footer>
 );
 
 export default AccountFooter;
