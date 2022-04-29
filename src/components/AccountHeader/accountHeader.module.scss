@@ -22,6 +22,7 @@ $accountHeader-mobile-breakpoint: 480px;
 
         @media screen and (max-width: $accountHeader-mobile-breakpoint) {
             margin-left: 20px;
+            width: 113px;
         }
     }
 
@@ -61,12 +62,14 @@ $accountHeader-mobile-breakpoint: 480px;
 
             @media screen and (max-width: $accountHeader-mobile-breakpoint) {
                 display: initial;
+                font-size: 14px;
             }
         }
 
         .fullLinkText {
             @media screen and (max-width: $accountHeader-mobile-breakpoint) {
                 display: none;
+                font-size: 14px;
             }
         }
     }
