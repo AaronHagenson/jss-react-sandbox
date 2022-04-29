@@ -1,6 +1,15 @@
 $login-mobile-breakpoint: 480px;
 
 .loginContainer {
+    background-color: rgb(242, 242, 242);
+    min-height: calc(100vh - 188px);
+
+    @media screen and (max-height: 830px) {
+        min-height: 642px;
+    }
+}
+
+.loginModal {
     width: 444px;
     background-color: rgb(255, 255, 255);
     padding: 32px;
@@ -19,24 +28,6 @@ $login-mobile-breakpoint: 480px;
         height: 100%;
         padding: 20px 20px 96px 20px;
         margin-top: 80px;
-    }
-
-    @media screen and (max-height: 820px) {
-        // height: 68%;
-        // margin-top: 38vh;
-        // margin-top: 270px;
-        overflow: auto;
-        height: 64vh;
-        margin-top: 34vh;
-    }
-
-    @media screen and (max-height: 575px) {
-        // height: 68%;
-        // margin-top: 38vh;
-        // margin-top: 270px;
-        // overflow: auto;
-        height: 54vh;
-        margin-top: 32vh;
     }
 
     h2 {
