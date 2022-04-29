@@ -6,7 +6,8 @@ $login-mobile-breakpoint: 480px;
     padding: 32px;
     margin: 0;
     position: absolute;
-    top: 50%;
+    // top: 50%;
+    margin-top: 323px;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -18,6 +19,24 @@ $login-mobile-breakpoint: 480px;
         height: 100%;
         padding: 20px 20px 96px 20px;
         margin-top: 80px;
+    }
+
+    @media screen and (max-height: 820px) {
+        // height: 68%;
+        // margin-top: 38vh;
+        // margin-top: 270px;
+        overflow: auto;
+        height: 64vh;
+        margin-top: 34vh;
+    }
+
+    @media screen and (max-height: 575px) {
+        // height: 68%;
+        // margin-top: 38vh;
+        // margin-top: 270px;
+        // overflow: auto;
+        height: 54vh;
+        margin-top: 32vh;
     }
 
     h2 {

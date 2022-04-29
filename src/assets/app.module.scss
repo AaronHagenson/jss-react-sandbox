@@ -10,6 +10,22 @@ a[target='_blank']:after {
 .scChromeData, .scpm { display: none !important; }
 
 body { 
-  background-color: #f2f2f2;
+  // background-color: #f2f2f2;
   font-family: "acumin-pro", Helvetica, Arial, sans-serif;
+}
+
+.appContainer {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.mainContent {
+  // background-color: cadetblue;
+  background-color: #f2f2f2;
+
+  min-height: calc(100vh - 188px);
+
 }
