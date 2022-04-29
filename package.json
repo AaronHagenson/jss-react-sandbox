@@ -7,7 +7,8 @@
     "appName": "jss-react-sandbox",
     "rootPlaceholders": [
       "jss-main",
-      "account-header"
+      "account-header", 
+      "account-footer"
     ],
     "sitecoreDistPath": "/dist/jss-react-sandbox",
     "sitecoreConfigPath": "/App_Config/Include/zzz",

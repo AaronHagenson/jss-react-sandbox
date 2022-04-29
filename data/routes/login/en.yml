@@ -19,3 +19,7 @@ placeholders:
         logo: 
           src: /data/media/img/legrandav-logo.svg
           alt: LegrandAv Logo
+  account-footer:
+    - componentName: AccountFooter
+      fields:
+        heading: footer test

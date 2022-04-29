@@ -79,6 +79,7 @@ const Layout = ({ route }) => (
     <div className="appContainer">
       <Placeholder name="account-header" rendering={route} />
       <Placeholder name="jss-main" rendering={route} />
+      <Placeholder name="account-footer" rendering={route} />
     </div>
   </React.Fragment>
 );
