@@ -10,7 +10,10 @@ export default function (manifest) {
   manifest.addComponent({
     name: 'AccountHeader',
     icon: SitecoreIcon.DocumentTag,
-    fields: [{ name: 'logo', type: CommonFieldTypes.Image }],
+    fields: [
+      { name: 'logo', type: CommonFieldTypes.Image },
+      { name: 'backArrowIcon', type: CommonFieldTypes.Image },
+    ],
 
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

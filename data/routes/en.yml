@@ -65,6 +65,8 @@ placeholders:
         logo: 
           src: /data/media/img/legrandav-logo.svg
           alt: LegrandAv Logo
+        backArrowIcon: 
+          src: /data/media/img/chevron_left.svg
   account-footer:
     - componentName: AccountFooter
       fields:
